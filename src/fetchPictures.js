@@ -11,7 +11,7 @@ export default class NewsApiService {
     }
 
     async fetchPictures() {
-        console.log("before", this);
+        // console.log("before", this);
         return await fetch(`https://pixabay.com/api/?key=${this.key}&q=${this.searchQuery}&image_type=photo&orientation=horizontal&per_page=${this.per_page}&page=${this.page}`)
         .then(response => response.json())
         .then(data => {
@@ -19,7 +19,7 @@ export default class NewsApiService {
             
             this.incrementPage();
             console.log("after", this);
-            console.log(`Hooray! We found ${data.totalHits} images.`);
+            // console.log(`Hooray! We found ${data.totalHits} images.`);
             console.log(data.hits.length);
             return data.hits;
             
